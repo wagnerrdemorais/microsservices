@@ -1,6 +1,7 @@
 package com.wagnerrdemorais.loja.controller;
 
 import com.wagnerrdemorais.loja.dto.CompraDto;
+import com.wagnerrdemorais.loja.model.Compra;
 import com.wagnerrdemorais.loja.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class CompraController {
     private CompraService compraService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public void realizaCompra(@RequestBody CompraDto compraDto) {
-        compraService.realizaCompra(compraDto);
+    public Compra realizaCompra(@RequestBody CompraDto compraDto) {
+        return compraService.realizaCompra(compraDto);
     }
 }
